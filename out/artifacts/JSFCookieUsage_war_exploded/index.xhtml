@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>JSF Cookie Kullanımı</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:dataTable value="#{cookieBean.people}" var="beanObject">
+            <h:column>
+                <f:facet name="header">
+                    İsim
+                </f:facet>
+                <h:outputText value="#{beanObject}"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">
+                    Listeye Ekle
+                </f:facet>
+                <h:commandButton value="Ekle" action="#{cookieBean.addToList(beanObject)}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+</html>
